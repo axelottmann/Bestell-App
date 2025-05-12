@@ -85,7 +85,7 @@ function renderDishes() {
       dishElement.innerHTML = `
           <h3>${dish.name}</h3>
           <span>${dish.description}</span>
-          <p>Preis: €${dish.price.toFixed(2)}</p>
+          <p>Preis: ${dish.price.toFixed(2)} €</p>
           <button onclick="addToCart('${dish.name}', ${dish.price})">+</button>
       `;
       dishesContainer.appendChild(dishElement);
@@ -105,7 +105,7 @@ function renderDrinks() {
       drinkElement.innerHTML = `
           <h3>${drink.name}</h3>
           <span>${drink.description}</span>
-          <p>Preis: €${drink.price.toFixed(2)}</p>
+          <p>Preis: ${drink.price.toFixed(2)} €</p>
           <button onclick="addToCart('${drink.name}', ${drink.price})">+</button>
       `;
       drinksContainer.appendChild(drinkElement);
@@ -125,18 +125,16 @@ function renderDesserts() {
       dessertElement.innerHTML = `
           <h3>${dessert.name}</h3>
           <span>${dessert.description}</span>
-          <p>Preis: €${dessert.price.toFixed(2)}</p>
+          <p>Preis: ${dessert.price.toFixed(2)} €</p>
           <button onclick="addToCart('${dessert.name}', ${dessert.price})">+</button>
       `;
       dessertsContainer.appendChild(dessertElement);
   });
 }
 
-
 function addToCart(itemName, itemPrice) {
   console.log(`Artikel hinzugefügt: ${itemName} - Preis: €${itemPrice.toFixed(2)}`);
 }
-
 
 document.addEventListener('DOMContentLoaded', () => {
   renderDishes();
