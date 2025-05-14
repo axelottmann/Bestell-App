@@ -170,7 +170,7 @@ function renderCategory(items, containerId) {
               <span>${item.description}</span>
           </div>
           <div class="item-price">
-              <p>€${item.price.toFixed(2)}</p>
+              <p>${item.price.toFixed(2)} €</p>
           </div>
           <button class="add-to-cart" onclick="addToCart('${item.name}', ${item.price})">+</button>
       `;
@@ -195,7 +195,7 @@ function renderCart() {
         itemElement.classList.add('cart-item');
         itemElement.innerHTML = `
             <h3>${item.name}</h3>
-            <p>Preis: €${item.price.toFixed(2)}</p>
+            <p>Preis: ${item.price.toFixed(2)} €</p>
             <p>Anzahl: ${item.amount}</p>
         `;
         cartContainer.appendChild(itemElement);
@@ -246,7 +246,7 @@ function renderCart() {
           <div class="cart-item">
               <div class="cart-item-info">
                   <h3>${item.name}</h3>
-                  <p>Preis: €${item.price.toFixed(2)}</p>
+                  <p>Preis: ${item.price.toFixed(2)} €</p>
                   <p>Anzahl: ${item.amount}</p>
               </div>
               <div class="cart-item-actions">
@@ -259,7 +259,7 @@ function renderCart() {
 
   const totalPrice = cart.reduce((sum, item) => sum + item.price * item.amount, 0);
   if (cart.length > 0) {
-      cartContainer.innerHTML += `<div class="total-price"><h3>Gesamtpreis: €${totalPrice.toFixed(2)}</h3></div>`;
+      cartContainer.innerHTML += `<div class="total-price"><h3>Gesamtpreis: ${totalPrice.toFixed(2)} €</h3></div>`;
   }
 }
 
