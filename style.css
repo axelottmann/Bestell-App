@@ -16,13 +16,12 @@ a {
 }
 
 a:hover {
-    color: white;
+    color: rgba(247, 198, 139, 0.6);
 }
 
 p {
-    color: white;
-    flex: 1;
     font-size: 14px;
+    color: white;
     display: flex;
     justify-content: flex-end;
 }
@@ -35,10 +34,9 @@ span {
 }
 
 h1 {
-    color: black;
+    color:darkorange;
     font-size: 30px;
     margin-top: 0;
-    padding-top: 50px;
 }
 
 h2 {
@@ -55,6 +53,14 @@ h4 {
     font-size: 14px;
 }
 
+h5 {
+    color: rgb(0, 0, 0);
+    font-size: 14px;
+    margin-top: 0;
+    margin-bottom: 0;
+    
+}
+
 .description {
     font-size: 16px;
     color: #666;
@@ -62,6 +68,20 @@ h4 {
     width: 100%;
     display: flex;
     justify-content: flex-start;
+}
+
+.description-text {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    color: black;
+    font-size: 16px;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .rating {
@@ -377,16 +397,25 @@ footer {
     font-size: 14px;
     display: flex;
     justify-content: center;
+    padding-left: 80px;
+    padding-right: 80px;
     padding-top: 100px;
     padding-bottom: 300px;
 }
 
 .datenschutz {
     font-size: 16px;
+    color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     line-height: 1.6;
-    background-color: #f9f9f9;
-    padding: 80px;
-    border-radius: 10px;
+    background-color:rgba(128, 128, 128,0.4);
+    padding-left: 80px;
+    padding-right: 80px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -481,6 +510,20 @@ input[type=text], select, textarea {
     }
 }
 
+@media (max-width: 500px) {
+
+h1 {
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+}
+
 @media (max-width: 460px) {
     .thaiger-title {
         height: 15vh;
@@ -513,6 +556,13 @@ input[type=text], select, textarea {
         height: 14vh;
     }
     
+    h1 {
+        font-size: 18px;
+    }
+
+    h2 {
+        font-size: 16px;
+    }
 
     h3 {
         font-size: 12px;
