@@ -65,8 +65,7 @@ function addToCart(name, price) {
 
 function renderCart() {
   const cartContainer = document.getElementById("cart-content");
-  if (!cartContainer) {
-    alert("Fehler: cart-content nicht gefunden.");
+    if (!cartContainer) {
     return;
   }
 
@@ -79,15 +78,40 @@ function renderCart() {
 
   let total = 0;
 
-  cart.forEach(item => {
+    cart.forEach((item, index) => {
     total += item.price * item.amount;
     const div = document.createElement("div");
-    div.textContent = `${item.amount}x ${item.name} – ${(item.price * item.amount).toFixed(2)} €`;
+    div.classList.add("cart-item");
+    div.innerHTML = `
+      <span>${item.amount}x ${item.name} – ${(item.price * item.amount).toFixed(2)} €</span>
+      <button onclick="increaseAmount(${index})">+</button>
+      <button onclick="decreaseAmount(${index})">-</button>
+      <button onclick="removeItem(${index})">x</button>
+    `;
     cartContainer.appendChild(div);
   });
 
   const totalDiv = document.createElement("div");
   totalDiv.innerHTML = `<strong>Gesamt: ${total.toFixed(2)} €</strong>`;
   cartContainer.appendChild(totalDiv);
+}
+
+function increaseAmount(index) {
+  cart[index].amount++;
+  renderCart();
+}
+
+function decreaseAmount(index) {
+  if (cart[index].amount > 1) {
+    cart[index].amount--;
+  } else {
+    cart.splice(index, 1);
+  }
+  renderCart();
+}
+
+function removeItem(index) {
+  cart.splice(index, 1);
+  renderCart();
 }
 
